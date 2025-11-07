@@ -31,6 +31,7 @@ function getHtmlEntryFiles(srcDir) {
 
 export default defineConfig({
 	root: 'src',
+	base: '/single-page-tools/',
 	build: {
 		rollupOptions: {
 			input: getHtmlEntryFiles('src')
