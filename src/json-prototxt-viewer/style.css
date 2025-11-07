@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.tree-node {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 1px solid #e5e7eb;
+}
+
+.key-pair {
+    display: flex;
+    position: relative;
+    padding: 3px;
+}
+
+.value-string {
+    color: #059669;
+    /* emerald-600 */
+}
+
+.value-number {
+    color: #2563eb;
+    /* blue-600 */
+}
+
+.value-boolean {
+    color: #7c3aed;
+    /* violet-600 */
+}
+
+.value-null {
+    color: #e98c2d;
+    /* amber-600 */
+}
+
+.value-empty {
+    color: #71717a;
+    font-style: italic;
+    /* zinc-500 */
+}
+
+.key-span {
+    color: #1f2937;
+    /* gray-800 */
+    font-weight: 500;
+    margin-right: 0.5rem;
+}
