@@ -103,6 +103,10 @@
                 if (parsed !== value) {
                     return recursiveParse(parsed);
                 }
+                if (typeof parsed === 'number') {
+                    // Return original as string to prevent precision issue
+                    return value;
+                }
                 return parsed;
             }
             if (Array.isArray(value)) {
