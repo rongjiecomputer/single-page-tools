@@ -181,7 +181,14 @@
 
         function parseJsonString(value) {
             try {
-                return JSON.parse(value);
+                return JSON.parse(value, (key, value, context) => {
+                    if (typeof value === 'number') {
+                        if (value > Number.MAX_SAFE_INTEGER || value < Number.MIN_SAFE_INTEGER) {
+                            return context.source;
+                        }
+                    }
+                    return value;
+                });
             } catch (err) {
                 try {
                     return prototxtParser.parse(value);
