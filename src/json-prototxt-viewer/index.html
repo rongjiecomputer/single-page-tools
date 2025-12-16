@@ -100,12 +100,12 @@
         function recursiveParse(value) {
             if (typeof value === 'string') {
                 const parsed = parseJsonString(value);
-                if (parsed !== value) {
-                    return recursiveParse(parsed);
-                }
                 if (typeof parsed === 'number') {
                     // Return original as string to prevent precision issue
                     return value;
+                }
+                if (parsed !== value) {
+                    return recursiveParse(parsed);
                 }
                 return parsed;
             }
